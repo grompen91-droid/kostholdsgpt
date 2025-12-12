@@ -4,7 +4,7 @@
 
 ### Fohåndsbehov
 Node.js \
-Ollama \
+Ollama 
 
 #### Steg 1:
 last ned Ollama fra nettsiden demmes. \
@@ -16,7 +16,7 @@ https://ollama.com/
 #### Steg 3:
 Åpne terminal og run: \
 ollama signin \
-ollama pull gpt-oss:120b-cloud \
+ollama pull gpt-oss:120b-cloud 
 
 # Last ned repo
 
@@ -24,7 +24,7 @@ ollama pull gpt-oss:120b-cloud \
 ## Metode 1: Clone repo fra terminal
 git clone [<repo-url>](https://github.com/noxaur/KostholdsGPT) \
 cd Backend \
-npm install \
+npm install 
 
 
 ## Metode 2: 

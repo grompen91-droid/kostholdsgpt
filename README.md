@@ -22,7 +22,7 @@ ollama pull gpt-oss:120b-cloud
 
 
 ## Metode 1: Clone repo fra terminal
-git clone [<repo-url>](https://github.com/noxaur/KostholdsGPT) \
+git clone https://github.com/noxaur/KostholdsGPT \
 cd Backend \
 npm install 
 

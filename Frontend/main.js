@@ -12,6 +12,9 @@ console.log(jsonTemplate);
 
 const input = document.getElementById(`input`);
 
+
+
+
 /* input.addEventListener(`click`, (e) => {
     if (e.key === `Enter`) {
         console.log(`${e.key}, key pressed! ${jsonTemplate}`)

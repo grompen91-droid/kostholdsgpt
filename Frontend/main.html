@@ -10,29 +10,76 @@
 
 <body>
     <header>
-        <nav>
+        <nav id="hoved">
             <img src="https://cdn.discordapp.com/attachments/1408393485345755260/1447953802002169886/autodraw_12_9_2025_1_-removebg-preview.png?ex=69397f90&is=69382e10&hm=af9a4bd45415beb61b61fedee5e9255d01d949555de7a15acf03c017c040ef2a&"
-                            alt="KostholdsGPT Logo">
-            <h1>KostholdsGPT</h1>
-            <h2>Om Oss</h2>
+                alt="KostholdsGPT Logo">
+            <h1 class="tekst">KostholdsGPT</h1>
+            <h2 class="tekst">Om Oss</h2>
 
         </nav>
+        <hr id="under">
     </header>
 
     <main>
         <section>
+            <div id="container">
+                <h1 class="tekst">Hvilke ingredienser har du? </h1>
+                <textarea type="text" class="skrive" name="inputBoks" id="inputBox"
+                    placeholder="Skriv inn prompt her."></textarea>
+                <button class="knapp knappEffect" type="button">></button>
 
+
+            </div>
         </section>
     </main>
 
     <footer>
         <section>
-            <div id="container">
-        <h1>Hva vil du spise?</h1> 
-        <input type="text" name="input" id="input">
-         <button class="knapp" type="button">></button> 
-         
-    </div>
+            <div id="Matcontainer">
+                <div class="matrettcontainer">
+                    
+                    <div class="informasjon">
+
+                        <div class="matTittel">
+                            
+                            <p class=tittel>Pasta </p>
+                        </div>
+
+                        <div class="generelt">
+                            <p class=tittel>Tid: 20-40min</p>
+
+                            <p class=tittel>Porsjoner: 4</p>
+
+                            <div class="dropdown">!
+                                <div class="dropdown-content">
+                                    <p>Proteiner: </p>
+                        <p>Næringsanalyse per person: </p>
+                        <p>Porsjoner: </p>
+                        <p>Energi: </p>
+                        <p>Total Kalorier: </p>
+                        <p>Karbohydrater: </p>
+                        <p>Ingredienser: </p>
+                        <p>Proteiner: </p>
+                        <p>Vitaminer: </p>
+                        <p>Mineraler: </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="matrett">
+                        <p>Beskrivelse: </p>
+                        
+                        <p>Fremgangsmåte: </p>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
         </section>
     </footer>
     <script src="main.js"></script>
@@ -41,4 +88,3 @@
 
 
 </html>
-

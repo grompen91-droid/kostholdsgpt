@@ -4,27 +4,27 @@ body {
     padding: 0px;
     margin: 0px;
     font-family: "Roboto", sans-serif;
-    background-color: rgb(230, 236, 245);
-
+    background-color: rgb(18, 58, 122);
     
-
 }
 
 .boks {
+    margin-top: 150px;
     display: flex;
-    justify-content: space-around;
+    
     align-items: center;
+    flex-flow: column wrap;
 
 
     background-color: rgb(18, 58, 122);
     
    
     height: 200px;
-    margin-top: 100px;
+   
 }
 
 #bilde {
-    margin-top: 150px;
+    
     background-image: url("banner.png");
     background-position: center;
     background-size: cover;
@@ -32,6 +32,15 @@ body {
     height: 350px;
 }
 
+#bildeMat {
+    
+
+    height: 500px;
+    
+    
+
+    
+}
 
 
 #Matcontainer {
@@ -66,6 +75,21 @@ body {
     justify-content: center;
 }
 
+.Kilder {
+    margin-top: 150px;
+    position: relative;
+
+    width: 1440px;
+    height: 200px;
+
+    display: flex;
+    
+    flex-direction:column;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+}
+
 .Fakta {
     position: relative;
 
@@ -75,8 +99,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content:baseline;
-
-   
 }
 
 .generelt {
@@ -112,9 +134,10 @@ body {
 }
 
 
-#bilde a {
+.link {
     text-decoration: none;
     color: inherit;
+    color: white;
 }
 
 #bilde p {
@@ -175,14 +198,23 @@ hr {
     color: rgb(255, 255, 255);
 }
 
+.Stortekst {
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+}
+
 .title {
     color: rgb(255, 255, 255);
     font-size: 28px;
 }
 
-.svarttekst {
-    color: rgb(0, 0, 0);
+.Stortitle {
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 58px;
 }
+
+
 
 .skrive {
     

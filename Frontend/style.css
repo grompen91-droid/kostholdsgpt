@@ -4,27 +4,35 @@ body {
     padding: 0px;
     margin: 0px;
     font-family: "Roboto", sans-serif;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(230, 236, 245);
 
     
 
+}
+
+.boks {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+
+    background-color: rgb(18, 58, 122);
+    
+   
+    height: 200px;
+    margin-top: 100px;
 }
 
 #bilde {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: rgb(255, 255, 255);
-    
-   
-    height: 550px;
     margin-top: 150px;
-    
     background-image: url("banner.png");
     background-position: center;
     background-size: cover;
+
+    height: 350px;
 }
+
+
 
 #Matcontainer {
     position: relative;
@@ -58,6 +66,19 @@ body {
     justify-content: center;
 }
 
+.Fakta {
+    position: relative;
+
+    width: 350px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:baseline;
+
+   
+}
+
 .generelt {
     position: relative;
 
@@ -67,7 +88,10 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
+    
 }
+
 .matrett {
     position: relative;
     
@@ -148,6 +172,15 @@ hr {
 }
 
 .tekst {
+    color: rgb(255, 255, 255);
+}
+
+.title {
+    color: rgb(255, 255, 255);
+    font-size: 28px;
+}
+
+.svarttekst {
     color: rgb(0, 0, 0);
 }
 
@@ -189,6 +222,7 @@ hr {
 
 #inputBox {
     background-color: #11327c;
+    color: white;
     
     padding: 30px;
     margin: 5px;

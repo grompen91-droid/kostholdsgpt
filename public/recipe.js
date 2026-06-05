@@ -12,7 +12,6 @@ if (!recipe) {
 } else {
     const n = recipe.nutrition || {};
     root.innerHTML = `
-        <button class="back" onclick="history.back()">← Back</button>
         <h1 class="recipeTitle">${esc(recipe.name)}</h1>
         <div class="recipeMeta">
             <span>Time to create: ${esc(recipe.time)}</span>

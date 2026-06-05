@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>KostholdsGPT</title>
+</head>
+
+<body class="app">
+    <header class="topbar">
+        <span class="brand">KostholdsGPT</span>
+    </header>
+
+    <main class="chat">
+        <p class="intro" id="intro" style="display:none">Here is two different dinner recommendations easy to make as you requested, please choose one or ask me to generate more.</p>
+
+        <div class="cards" id="cards"></div>
+
+        <button class="generate" id="generate" style="display:none">Generate more</button>
+    </main>
+
+    <div class="inputbar">
+        <input type="text" id="input" placeholder="Type what ingredients you have..">
+        <button class="send" id="send">↑</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

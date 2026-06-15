@@ -12,6 +12,17 @@ function esc(str) {
     return div.innerHTML;
 }
 
+async function loadImage(name, imgEl) {
+    try {
+        const res = await fetch(`/api/image?q=${encodeURIComponent(name)}`);
+        const data = await res.json();
+        if (data.image) {
+            imgEl.src = data.image;
+            imgEl.classList.add(`loaded`);
+        }
+    } catch (_) { /* keep placeholder */ }
+}
+
 const systemPrompt = `You are KostholdsGPT, a dinner recommendation assistant. Given the user's ingredients, suggest exactly 2 easy dinner recipes. Parsing: the user may separate ingredients with commas, spaces, new lines, slashes, or words like "and" and "with", and may misspell them. Carefully split the input into each distinct food ingredient, correct obvious typos, and treat each one separately. By default, separate words are separate ingredients (for example "potato pancake" means potato AND pancake, two ingredients), unless two words clearly name one common item like "olive oil" or "soy sauce". Always treat each ingredient as a RAW, basic cooking ingredient, never as a finished or pre-made dish. The recipe name must NEVER appear in the ingredients list. Rules: ALWAYS reply, never refuse, never apologize. Accept any food ingredient no matter what. ONLY use the user's ingredients plus basic pantry staples (salt, pepper, oil, water), never invent main ingredients. You do not have to use all of them. Cook everything from raw — make realistic, tasty recipes that actually combine the listed ingredients sensibly. Each ingredient must state a realistic amount. The "steps" must be detailed and thorough: at least 6 clear numbered steps including prep, cooking temperatures, times, and serving tips. Include nutrition per portion. Reply ONLY with a JSON object: {"recipes":[{"name":"Pasta","time":"30m","portions":4,"ingredients":["200g pasta","2 tomatoes"],"steps":["Boil pasta","Add sauce"],"nutrition":{"calories":"450 kcal","protein":"15g","carbs":"60g","fat":"10g"}},{"name":"Burger","time":"20m","portions":2,"ingredients":["2 buns","200g beef"],"steps":["Cook patty","Assemble"],"nutrition":{"calories":"600 kcal","protein":"30g","carbs":"40g","fat":"35g"}}]}`;
 
 async function getRecipes(ingredients) {
@@ -50,11 +61,17 @@ function showCards(recipes) {
         const card = document.createElement(`div`);
         card.className = `card`;
         card.innerHTML = `
+            <div class="cardImg"></div>
             <h2>${esc(recipe.name)}</h2>
             <p>Time to create: ${esc(recipe.time)}</p>
             <p>Portions: ${esc(recipe.portions)}</p>
             <button class="select">Read more</button>
             <div class="details"></div>`;
+        const img = document.createElement(`img`);
+        img.alt = recipe.name;
+        img.loading = `lazy`;
+        card.querySelector(`.cardImg`).appendChild(img);
+        loadImage(recipe.name, img);
         card.querySelector(`.select`).addEventListener(`click`, () => {
             document.querySelectorAll(`.card`).forEach(c => {
                 c.classList.remove(`selected`);

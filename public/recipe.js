@@ -12,6 +12,7 @@ if (!recipe) {
 } else {
     const n = recipe.nutrition || {};
     root.innerHTML = `
+        <div class="recipeImg"><img alt="${esc(recipe.name)}"></div>
         <h1 class="recipeTitle">${esc(recipe.name)}</h1>
         <div class="recipeMeta">
             <span>Time to create: ${esc(recipe.time)}</span>
@@ -29,4 +30,14 @@ if (!recipe) {
             <h2>How to make</h2>
             <ol>${(recipe.steps || []).map(s => `<li>${esc(s)}</li>`).join(``)}</ol>
         </section>`;
+    const heroImg = root.querySelector(`.recipeImg img`);
+    fetch(`/api/image?q=${encodeURIComponent(recipe.name)}`)
+        .then(r => r.json())
+        .then(d => {
+            if (d.image) {
+                heroImg.src = d.image;
+                heroImg.classList.add(`loaded`);
+            }
+        })
+        .catch(() => { /* keep placeholder */ });
 }
